@@ -182,7 +182,7 @@ h2 {
 }
 
 .section {
-  padding-top: 100px; /* space before each service section */
+  padding: 100px 0px;
 }
 
 /* Service H2 headings */
