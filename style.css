@@ -99,6 +99,15 @@ p {
   box-shadow: 0 6px 16px rgba(89, 105, 166, 0.2);
 }
 
+/* Reset button defaults to match link buttons */
+button.btn {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 /* ABOUT SECTION LAYOUT */
 .about-section {
   padding: 0; /* No top/bottom padding so the background aligns perfectly */
