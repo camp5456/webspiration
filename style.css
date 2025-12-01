@@ -8,8 +8,9 @@ body {
 .minimal-header {
   width: 100%;
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   background: #ffffff;
+  border-bottom: solid 1px #efefef;
 }
 
 .minimal-header p {
