@@ -11,6 +11,21 @@ body {
   padding: 1rem 0;
   background: #ffffff;
   border-bottom: solid 1px #efefef;
+  transition: padding 0.3s ease;
+}
+
+/* Sticky only on desktop */
+@media (min-width: 769px) {
+  .minimal-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Shrink padding when scrolled */
+  .minimal-header.scrolled {
+    padding: 0.5rem 0;
+  }
 }
 
 .minimal-header p {

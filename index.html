@@ -178,6 +178,22 @@
         easing: 'ease-out',
         once: false
     });
+
+    // Shrink header on scroll (desktop only)
+    const header = document.querySelector('.minimal-header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        lastScroll = currentScroll;
+    });
     </script>
 </body>
 </html>
