@@ -1,4 +1,9 @@
 / * Base */
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   color: #6B6967;
