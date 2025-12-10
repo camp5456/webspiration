@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Glow Up Deck | Webspiration Consulting</title>
+    <meta name="description" content="Access your 24 website maintenance task cards and track your progress.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- MINIMAL HEADER -->
+    <header class="minimal-header">
+        <p>webspiration consulting</p>
+    </header>
+
+    <!-- Main App -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <h1 class="pretitle">The Website DIY</h1>
+            <h1 class="title">Glow Up Deck</h1>
+            <p  class="tagline">24 bite-sized tasks to keep your site running smooth all year long</p>
+
+            <!-- Progress Tracker -->
+            <section class="progress-section">
+                <div class="progress-text">
+                    <span id="completed-count">0</span> / 24 tasks completed
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <button id="reset-progress-btn" class="reset-progress-link">Reset All Progress</button>
+            </section>
+        </div>
+    </header>
+
+    <div id="main-app" class="container">
+
+        <!-- Category Navigation -->
+        <section class="categories-section">
+            <h2>Browse by Category</h2>
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">
+                    Show All <span class="category-count">(24)</span>
+                </button>
+                <button class="category-btn" data-category="flows">
+                    Workflows <span class="category-count">(4)</span>
+                </button>
+                <button class="category-btn" data-category="performance">
+                    Performance <span class="category-count">(3)</span>
+                </button>
+                <button class="category-btn" data-category="content">
+                    Content <span class="category-count">(9)</span>
+                </button>
+                <button class="category-btn" data-category="accessibility">
+                    Usability/Accessibility <span class="category-count">(8)</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Cards Display Area -->
+        <section class="cards-section">
+            <div id="cards-container" class="cards-grid"></div>
+        </section>
+
+        <!-- Random Card Button -->
+        <section class="random-section">
+            <button id="random-card-btn" class="random-btn">
+                🎲 Pull a Random Card
+            </button>
+        </section>
+
+        <!-- Card Modal -->
+        <div id="card-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-card-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Webspiration Consulting | <a href="../index.html">Back to Home</a></p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Shrink header on scroll (desktop only)
+        const header = document.querySelector('.minimal-header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+{
+  "flows": [
+    {
+      "id": 1,
+      "title": "Test Your Contact Forms",
+      "category": "Workflows",
+      "time": "10 min",
+      "why": "A broken contact form means lost leads. You might not even know people are trying to reach you.",
+      "how": "1. Fill out each form on your site\n2. Check if you receive the emails\n3. Test from both desktop and mobile\n4. Verify auto-reply emails are working",
+      "stuck": "Need help troubleshooting your forms? Book a DIY Support Session."
+    },
+    {
+      "id": 2,
+      "title": "Test Your Checkout Flow",
+      "category": "Workflows",
+      "time": "15 min",
+      "why": "If checkout breaks, you lose sales. Test the entire journey your customers take.",
+      "how": "1. Add an item to cart (or start booking)\n2. Go through each step as a customer would\n3. Complete a test purchase/booking\n4. Verify confirmation emails arrive",
+      "stuck": "Stuck on a broken checkout? Let's fix it together in a DIY session."
+    },
+    {
+      "id": 3,
+      "title": "Test Your Email Opt-in Flow",
+      "category": "Workflows",
+      "time": "10 min",
+      "why": "Your email list is valuable. Make sure people can actually join it.",
+      "how": "1. Sign up using a test email\n2. Check that welcome email arrives\n3. Verify email confirms subscription\n4. Test unsubscribe link works too",
+      "stuck": "Email flows confusing? Book a session and we'll walk through it."
+    },
+    {
+      "id": 4,
+      "title": "Test Your Login Workflows",
+      "category": "Workflows",
+      "time": "10 min",
+      "why": "These pages set expectations and build trust. Make sure they're working and saying the right things.",
+      "how": "1. Complete a form/purchase to trigger the page\n2. Check the messaging - is it clear?\n3. Verify any next steps are explained\n4. Make sure links work",
+      "stuck": "Want to optimize your confirmation pages? Let's chat in a DIY session."
+    }
+  ],
+  "performance": [
+    {
+      "id": 5,
+      "title": "Check Your Site on Mobile",
+      "category": "Performance",
+      "time": "15 min",
+      "why": "Most visitors use phones. If your site looks broken on mobile, they'll leave.",
+      "how": "1. Open your site on your phone\n2. Check every major page\n3. Test buttons and forms\n4. Make sure text is readable without zooming",
+      "stuck": "Mobile site issues? We can fix them together."
+    },
+    {
+      "id": 6,
+      "title": "Run a Speed Test",
+      "category": "Performance",
+      "time": "5 min",
+      "why": "Slow sites lose visitors. Even a 1-second delay impacts conversions.",
+      "how": "1. Go to PageSpeed Insights (Google)\n2. Enter your homepage URL\n3. Review the score (aim for 80+)\n4. Note the top 3 issues to fix",
+      "stuck": "Not sure how to speed up your site? Let's troubleshoot together."
+    },
+    {
+      "id": 7,
+      "title": "Test in Different Browsers",
+      "category": "Performance",
+      "time": "10 min",
+      "why": "Your site might look perfect in Chrome but broken in Safari. Check both.",
+      "how": "1. Open your site in Chrome\n2. Open it in Safari or Firefox\n3. Check if layouts look the same\n4. Test key functionality in both",
+      "stuck": "Browser issues driving you crazy? Book a session."
+    }
+  ],
+  "content": [
+    {
+      "id": 8,
+      "title": "Update Your Copyright Year",
+      "category": "Content",
+      "time": "2 min",
+      "why": "An outdated copyright makes your whole site look neglected.",
+      "how": "1. Scroll to your footer\n2. Find the copyright year\n3. Update it to the current year\n4. Save and publish",
+      "stuck": "Can't find where to edit your footer? We'll help you locate it."
+    },
+    {
+      "id": 9,
+      "title": "Review Your Bio - Is It Still Accurate?",
+      "category": "Content",
+      "time": "10 min",
+      "why": "Your business evolves. Your bio should too.",
+      "how": "1. Read your About page like a stranger would\n2. Update outdated info (years of experience, services, etc.)\n3. Make sure it reflects who you are NOW\n4. Save changes",
+      "stuck": "Not sure how to rewrite your bio? Let's workshop it together."
+    },
+    {
+      "id": 10,
+      "title": "Check for Broken Links",
+      "category": "Content",
+      "time": "15 min",
+      "why": "Broken links frustrate visitors and hurt your SEO.",
+      "how": "1. Use a free tool like Dead Link Checker\n2. Enter your site URL\n3. Review the broken links report\n4. Fix or remove broken links",
+      "stuck": "Overwhelmed by broken links? We can clean them up together."
+    },
+    {
+      "id": 11,
+      "title": "Refresh Your Testimonials",
+      "category": "Content",
+      "time": "10 min",
+      "why": "Recent testimonials build more trust than old ones.",
+      "how": "1. Review your current testimonials\n2. Remove any from 5+ years ago\n3. Reach out to recent clients for new ones\n4. Add fresh testimonials to your site",
+      "stuck": "Not sure where to place testimonials? Let's find the best spots."
+    },
+    {
+      "id": 12,
+      "title": "Review Your Services Page - Anything Outdated?",
+      "category": "Content",
+      "time": "15 min",
+      "why": "If your services changed but your site didn't, you're confusing potential clients.",
+      "how": "1. Read your services page\n2. Remove services you no longer offer\n3. Add new services\n4. Update pricing if it changed",
+      "stuck": "Need help organizing your services page? Book a session."
+    },
+    {
+      "id": 13,
+      "title": "Update Your Headshot If 5+ Years Old",
+      "category": "Content",
+      "time": "20 min",
+      "why": "People want to see the current you, not the 2018 you.",
+      "how": "1. Check the date on your current headshot\n2. If it's 5+ years old, schedule a new photo\n3. Upload and replace the old one\n4. Update across all pages",
+      "stuck": "Not sure how to upload a new photo? We'll walk you through it."
+    },
+    {
+      "id": 14,
+      "title": "Review Your 404 Error Page",
+      "category": "Content",
+      "time": "5 min",
+      "why": "A helpful 404 page keeps visitors on your site instead of leaving frustrated.",
+      "how": "1. Type a fake URL on your site (yoursite.com/fakepage)\n2. See what 404 page appears\n3. Make sure it has a search box or helpful links\n4. Add a friendly message",
+      "stuck": "Want to customize your 404 page? Let's do it together."
+    },
+    {
+      "id": 15,
+      "title": "Jazz Up Your Unsubscribe Page",
+      "category": "Content",
+      "time": "10 min",
+      "why": "Even when people leave, you can leave a good impression.",
+      "how": "1. Unsubscribe from your own email list\n2. Review the unsubscribe page message\n3. Make it friendly and offer alternatives (reduce frequency?)\n4. Update and save",
+      "stuck": "Not sure what to say on your unsubscribe page? We'll help you write it."
+    },
+    {
+      "id": 16,
+      "title": "Scan for Typos & Outdated Info",
+      "category": "Content",
+      "time": "20 min",
+      "why": "Typos make you look unprofessional. Fresh eyes catch what you miss.",
+      "how": "1. Read your homepage, About, and Services pages\n2. Look for typos, weird spacing, formatting issues\n3. Check for outdated info (old address, phone, dates)\n4. Fix what you find",
+      "stuck": "Want a second pair of eyes? Book a DIY session for a quick review."
+    }
+  ],
+  "accessibility": [
+    {
+      "id": 17,
+      "title": "Check Image Alt Text",
+      "category": "Usability/Accessibility",
+      "time": "15 min",
+      "why": "Alt text helps screen readers describe images to visually impaired visitors.",
+      "how": "1. Right-click an image on your site\n2. Check if it has alt text\n3. Add descriptive alt text to images that don't have it\n4. Keep it concise and descriptive",
+      "stuck": "Not sure how to add alt text on your platform? Let's figure it out."
+    },
+    {
+      "id": 18,
+      "title": "Run WAVE Accessibility Check",
+      "category": "Usability/Accessibility",
+      "time": "10 min",
+      "why": "Accessible sites reach more people and rank better in search.",
+      "how": "1. Go to wave.webaim.org\n2. Enter your site URL\n3. Review errors and warnings\n4. Note the top 3 issues to address",
+      "stuck": "WAVE results overwhelming? We can prioritize what matters most."
+    },
+    {
+      "id": 19,
+      "title": "Check Color Contrast",
+      "category": "Usability/Accessibility",
+      "time": "10 min",
+      "why": "Low contrast makes text hard to read, especially for people with vision issues.",
+      "how": "1. Use WebAIM Contrast Checker\n2. Test your main text color against background\n3. Aim for a ratio of at least 4.5:1\n4. Adjust colors if needed",
+      "stuck": "Not sure which colors to change? Let's pick accessible alternatives together."
+    },
+    {
+      "id": 20,
+      "title": "Make Sure Text Isn't an Image",
+      "category": "Usability/Accessibility",
+      "time": "10 min",
+      "why": "Text in images can't be read by screen readers or resized by users.",
+      "how": "1. Scan your site for images with text\n2. Replace with actual HTML text when possible\n3. If you must use images, add descriptive alt text\n4. Save changes",
+      "stuck": "Need help converting image text to HTML? Book a session."
+    },
+    {
+      "id": 21,
+      "title": "Review Link Names (No 'Click Here')",
+      "category": "Usability/Accessibility",
+      "time": "15 min",
+      "why": "Descriptive link text helps everyone understand where links go.",
+      "how": "1. Scan pages for 'Click here' or 'Read more' links\n2. Replace with descriptive text ('View our services' instead of 'Click here')\n3. Make sure links make sense out of context\n4. Update and save",
+      "stuck": "Not sure what to rename your links? We'll workshop better options."
+    },
+    {
+      "id": 22,
+      "title": "Check Font Sizes (Readable on Mobile?)",
+      "category": "Usability/Accessibility",
+      "time": "10 min",
+      "why": "Tiny text on mobile forces people to zoom and makes reading painful.",
+      "how": "1. Open your site on your phone\n2. Check if you have to zoom to read body text\n3. Text should be at least 16px on mobile\n4. Adjust if needed",
+      "stuck": "Not sure how to change font sizes? Let's do it together."
+    },
+    {
+      "id": 23,
+      "title": "Test Keyboard Navigation",
+      "category": "Usability/Accessibility",
+      "time": "10 min",
+      "why": "Some people navigate websites without a mouse. Make sure your site works for them.",
+      "how": "1. Close your laptop touchpad or unplug your mouse\n2. Try navigating your site using only Tab and Enter keys\n3. Make sure you can reach all important links/buttons\n4. Note anything that's unreachable",
+      "stuck": "Keyboard navigation issues? We can troubleshoot together."
+    },
+    {
+      "id": 24,
+      "title": "Review Form Labels & Error Messages",
+      "category": "Usability/Accessibility",
+      "time": "15 min",
+      "why": "Clear labels and error messages help everyone fill out forms successfully.",
+      "how": "1. Find a form on your site\n2. Check that every field has a clear label\n3. Try submitting with errors to see error messages\n4. Make sure error messages are helpful, not confusing",
+      "stuck": "Forms confusing? Let's make them clearer together."
+    }
+  ],
+  "encouragement": [
+    "You're doing great. Seriously.",
+    "Every small step counts.",
+    "Your website is lucky to have you.",
+    "Taking care of your site = taking care of your business.",
+    "Progress over perfection, always.",
+    "This is hard work. You're showing up anyway.",
+    "Your future clients will thank you for this.",
+    "Even 10 minutes makes a difference.",
+    "You don't have to do it all today.",
+    "Stuck? That's normal. Keep going.",
+    "Regardless of how this maintenance task goes, you are doing great and we are proud of you.",
+    "Small wins add up to big changes.",
+    "You've got this. We believe in you.",
+    "It's okay to take a break.",
+    "Everything is figureoutable.",
+    "You're already ahead of most business owners just by being here."
+  ]
+}

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Editor | Website Glow Up Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Category Color Variables */
+        :root {
+            --color-flows: #fed5ce;
+            --color-performance: #9ac9e6;
+            --color-content: #99e0c9;
+            --color-accessibility: #b99cc1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 0;
+            color: #6B6967;
+        }
+
+        /* Minimal Header */
+        .minimal-header {
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+            background: #ffffff;
+            border-bottom: solid 1px #efefef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .minimal-header p {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #999999;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Login Screen */
+        #login-screen {
+            max-width: 400px;
+            margin: 100px auto;
+        }
+
+        #login-screen h1 {
+            font-family: 'Fraunces', serif;
+            color: #6B6967;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 30px;
+            background: #b99cc1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        button:hover {
+            background: #a88bb0;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        .error {
+            color: #e74c3c;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Editor Screen */
+        #editor-screen {
+            display: none;
+        }
+
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .editor-header h1 {
+            font-family: 'Fraunces', serif;
+            color: #6B6967;
+            font-weight: 300;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .btn-success {
+            background: #5969a7;;
+        }
+
+        .btn-success:hover {
+            background: #5969a7;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 12px 24px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        /* All Cards - neutral styling */
+        .category-tab[data-category="all"] {
+            background: rgba(224, 224, 224, 0.3);
+            border-color: rgba(224, 224, 224, 0.4);
+        }
+
+        .category-tab[data-category="all"]:hover,
+        .category-tab[data-category="all"].active {
+            background: #e0e0e0;
+            color: black;
+            border-color: #e0e0e0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(224, 224, 224, 0.4);
+        }
+
+        /* Workflows - Peach */
+        .category-tab[data-category="flows"] {
+            background: rgba(254, 213, 206, 0.3);
+            border-color: rgba(254, 213, 206, 0.4);
+        }
+
+        .category-tab[data-category="flows"]:hover,
+        .category-tab[data-category="flows"].active {
+            background: var(--color-flows);
+            color: black;
+            border-color: var(--color-flows);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(254, 213, 206, 0.4);
+        }
+
+        /* Performance - Blue */
+        .category-tab[data-category="performance"] {
+            background: rgba(154, 201, 230, 0.3);
+            border-color: rgba(154, 201, 230, 0.4);
+        }
+
+        .category-tab[data-category="performance"]:hover,
+        .category-tab[data-category="performance"].active {
+            background: var(--color-performance);
+            color: black;
+            border-color: var(--color-performance);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(154, 201, 230, 0.4);
+        }
+
+        /* Content - Teal */
+        .category-tab[data-category="content"] {
+            background: rgba(153, 224, 201, 0.3);
+            border-color: rgba(153, 224, 201, 0.4);
+        }
+
+        .category-tab[data-category="content"]:hover,
+        .category-tab[data-category="content"].active {
+            background: var(--color-content);
+            color: black;
+            border-color: var(--color-content);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(153, 224, 201, 0.4);
+        }
+
+        /* Accessibility - Purple */
+        .category-tab[data-category="accessibility"] {
+            background: rgba(185, 156, 193, 0.3);
+            border-color: rgba(185, 156, 193, 0.4);
+        }
+
+        .category-tab[data-category="accessibility"]:hover,
+        .category-tab[data-category="accessibility"].active {
+            background: var(--color-accessibility);
+            color: black;
+            border-color: var(--color-accessibility);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(185, 156, 193, 0.4);
+        }
+
+        /* Cards List */
+        .cards-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .card-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .card-item:hover {
+            border-color: #b99cc1;
+            box-shadow: 0 5px 15px rgba(185, 156, 193, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .card-item h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Edit Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            color: #999;
+            cursor: pointer;
+            line-height: 20px;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .modal h2 {
+            font-family: 'Fraunces', serif;
+            color: #6B6967;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .preview-section {
+            background: rgba(185, 156, 193, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .preview-section h3 {
+            font-family: 'Fraunces', serif;
+            color: #6B6967;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .preview-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #b99cc1;
+        }
+
+        /* Modal-style preview */
+        .preview-card .modal-header-text {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #6B6967;
+            margin-bottom: 12px;
+            font-family: 'Fraunces', serif;
+        }
+
+        .preview-card .modal-divider {
+            width: 30%;
+            height: 1px;
+            background: #999;
+            margin: 0 auto 20px auto;
+        }
+
+        .preview-card .modal-title {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            text-align: center;
+            color: #2C2C54;
+            line-height: 1.3;
+            margin: 15px 0;
+        }
+
+        .preview-card .card-category {
+            display: block;
+            text-align: center;
+            margin: 0 auto 15px auto;
+            width: fit-content;
+            color: #343434;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .preview-card .card-time {
+            display: block;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .preview-card .modal-content-box {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1.5px solid rgba(185, 156, 193, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .preview-card .modal-section h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #2C2C54;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .preview-card .modal-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #6B6967;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .preview-card .modal-section ol {
+            margin: 0;
+            padding-left: 25px;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #6B6967;
+        }
+
+        .preview-card .modal-section ol li {
+            margin: 10px 0;
+        }
+
+        .preview-card .modal-section-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(185, 156, 193, 0.3);
+            margin: 25px 0;
+        }
+
+        .preview-card .modal-encouragement {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #2C2C54;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .preview-card .sparkle {
+            font-size: 1.2rem;
+            color: #D4AF37;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .download-section {
+            background: rgba(153, 224, 201, 0.15);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid rgba(153, 224, 201, 0.3);
+        }
+
+        .download-section h3 {
+            font-family: 'Fraunces', serif;
+            color: #6B6967;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .download-section p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .editor-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .header-actions {
+                width: 100%;
+            }
+
+            .header-actions button {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Minimal Header -->
+    <header class="minimal-header">
+        <p>webspiration consulting - card editor</p>
+    </header>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="container">
+        <h1>🔒 Card Editor Login</h1>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <button onclick="login()" class="btn-full">Login</button>
+        <p class="error" id="login-error"></p>
+    </div>
+
+    <!-- Editor Screen -->
+    <div id="editor-screen" class="container">
+        <div class="editor-header">
+            <h1>Website Glow Up Deck - Card Editor</h1>
+            <div class="header-actions">
+                <button onclick="downloadJSON()" class="btn-success">💾 Download Updated JSON</button>
+                <button onclick="logout()" class="btn-secondary">Logout</button>
+            </div>
+        </div>
+
+        <div class="success-message" id="success-message">
+            Card saved successfully!
+        </div>
+
+        <div class="category-tabs">
+            <button class="category-tab active" data-category="all" onclick="filterCategory('all')">All Cards (24)</button>
+            <button class="category-tab" data-category="flows" onclick="filterCategory('flows')">Workflows (4)</button>
+            <button class="category-tab" data-category="performance" onclick="filterCategory('performance')">Performance (3)</button>
+            <button class="category-tab" data-category="content" onclick="filterCategory('content')">Content (9)</button>
+            <button class="category-tab" data-category="accessibility" onclick="filterCategory('accessibility')">Usability/Accessibility (8)</button>
+        </div>
+
+        <div id="cards-list" class="cards-list"></div>
+
+        <div class="download-section">
+            <h3>📥 How to Update Your Site</h3>
+            <p>After editing cards, click "Download Updated JSON" above, then replace the cards.json file in your repo and push to GitHub.</p>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edit Card</h2>
+            
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                
+                <div class="form-group">
+                    <label for="edit-title">Task Title:</label>
+                    <input type="text" id="edit-title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-category">Category:</label>
+                    <select id="edit-category" required>
+                        <option value="Workflows">Workflows</option>
+                        <option value="Performance">Performance</option>
+                        <option value="Content">Content</option>
+                        <option value="Usability/Accessibility">Usability/Accessibility</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-time">Estimated Time:</label>
+                    <input type="text" id="edit-time" placeholder="e.g., 10 min" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-why">Why It Matters:</label>
+                    <textarea id="edit-why" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-how">How To Do It: (Each step on a new line)</label>
+                    <textarea id="edit-how" rows="6" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-stuck">Stuck Message:</label>
+                    <textarea id="edit-stuck" rows="2" required></textarea>
+                </div>
+
+                <div class="preview-section">
+                    <h3>Preview:</h3>
+                    <div class="preview-card" id="preview-card"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-success">Save Changes</button>
+                    <button type="button" onclick="closeModal()" class="btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="edit.js"></script>
+</body>
+</html>

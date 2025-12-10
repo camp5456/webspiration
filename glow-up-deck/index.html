@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Website Glow Up Deck | Webspiration Consulting</title>
+    <meta name="description" content="24 bite-sized website maintenance tasks to keep your site fresh and working hard for your business.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1973833');
+    </script>
+    <!-- End MailerLite Universal -->
+</head>
+<body>
+    <!-- MINIMAL HEADER -->
+    <header class="minimal-header">
+        <p>webspiration consulting</p>
+    </header>
+
+    <!-- Landing Page (shown before email opt-in) -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <h1 class="pretitle">The Website DIY</h1>
+            <h1 class="title">Glow Up Deck</h1>
+            <p  class="tagline">24 bite-sized tasks to keep your site running smooth all year long</p>
+            <div class="ml-embedded" data-form="d0WUvD"></div>
+            <p class="privacy-note">We respect your inbox. No spam, just helpful website tips.</p>
+        </div>
+    </header>
+
+    <div id="landing-page-header" class="container">
+
+        <section class="intro">
+            <p><strong>Here's how it works:</strong> Browse by category or pull a random card. Complete the tasks in 15 minutes or less. Complete two tasks per month and track your progress.</p>
+        </section>
+
+        <!-- Demo Card -->
+        <section class="demo-card-section">
+            <div class="demo-card">
+                <div class="modal-header-text">Website Glow-Up Task</div>
+                <div class="modal-divider"></div>
+                <span class="card-category demo-category">Workflows</span>
+                <h2 class="modal-title">Test Your Contact Forms</h2>
+                <p class="card-time">⏱ 10 min</p>
+
+                <div class="modal-content-box">
+                    <div class="modal-section">
+                        <h4>Quick Steps:</h4>
+                        <ol>
+                            <li>Fill out each form on your site</li>
+                            <li>Check if you receive the emails</li>
+                            <li>Test from both desktop and mobile</li>
+                            <li>Verify auto-reply emails are working</li>
+                        </ol>
+                    </div>
+                    <div class="modal-section-divider"></div>
+                    <div class="modal-section">
+                        <h4>Why It's Important</h4>
+                        <p>A broken contact form means lost leads. You might not even know people are trying to reach you.</p>
+                    </div>
+                </div>
+
+                <div class="modal-encouragement">
+                    <span>Your website deserves a little love today.</span>
+                    <span class="sparkle">✨</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Webspiration Consulting | <a href="../index.html">Back to Home</a></p>
+    </footer>
+    <script>
+        // Shrink header on scroll (desktop only)
+        const header = document.querySelector('.minimal-header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
