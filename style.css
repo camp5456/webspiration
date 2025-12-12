@@ -227,7 +227,7 @@ h2 {
 /* Space between About and Services */
 #services {
   padding-top: 0;
-  margin-top: 9.75rem;
+  margin-top: 4.75rem;
 }
 
 .section {
@@ -257,6 +257,97 @@ h2 {
   border: none;
   display: block;
   margin-bottom: 1.5rem;
+}
+
+/* GLOW UP DECK PROMO SECTION */
+.glow-up-promo-section {
+  background: #fce4ec; /* light pink background */
+  padding: 6rem 2rem;
+  width: 100%;
+}
+
+.glow-up-promo-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.glow-up-badge {
+  display: inline-block;
+  background: #F26698;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.glow-up-promo-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #6B6967;
+}
+
+.glow-up-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #6B6967;
+  margin-bottom: 2.5rem;
+}
+
+.glow-up-features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #6B6967;
+}
+
+.feature-icon {
+  color: #F26698;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.btn-glow-up {
+  background: #F26698;
+  box-shadow: 0 8px 20px rgba(242, 102, 152, 0.25);
+}
+
+.btn-glow-up:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(242, 102, 152, 0.35);
+}
+
+.btn-glow-up:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(242, 102, 152, 0.2);
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .glow-up-features {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .glow-up-promo-section {
+    padding: 4rem 1.5rem;
+  }
 }
 
 /* CONTACT FORM */
