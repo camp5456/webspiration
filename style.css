@@ -44,6 +44,16 @@ body {
   color: #999999;
 }
 
+.minimal-header a {
+  color: #999999;
+  text-decoration: none;
+  transition: font-weight 0.2s ease;
+}
+
+.minimal-header a:hover {
+  font-weight: 600;
+}
+
 .hero {
     text-align: center;
 }
