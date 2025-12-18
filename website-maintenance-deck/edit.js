@@ -91,14 +91,9 @@ function showEditor() {
 }
 
 function getAllCards() {
-    if (!cardsData) return [];
-    
-    return [
-        ...cardsData.flows,
-        ...cardsData.performance,
-        ...cardsData.content,
-        ...cardsData.accessibility
-    ];
+    if (!cardsData || !cardsData.cards) return [];
+
+    return cardsData.cards;
 }
 
 function filterCategory(category) {
@@ -115,13 +110,21 @@ function filterCategory(category) {
 
 function renderCardsList() {
     if (!cardsData) return;
-    
+
     let cards = [];
-    
+
     if (currentCategory === 'all') {
         cards = getAllCards();
     } else {
-        cards = cardsData[currentCategory] || [];
+        // Filter cards by category field
+        const categoryMap = {
+            'flows': 'Workflows',
+            'performance': 'Performance',
+            'content': 'Content',
+            'accessibility': 'Usability/Accessibility'
+        };
+        const categoryName = categoryMap[currentCategory];
+        cards = cardsData.cards.filter(card => card.category === categoryName);
     }
     
     cardsList.innerHTML = '';
@@ -183,21 +186,10 @@ function handleSaveCard(e) {
     };
     
     // Find and update the card in the data
-    const allCards = getAllCards();
-    const cardIndex = allCards.findIndex(c => c.id === cardId);
-    
+    const cardIndex = cardsData.cards.findIndex(c => c.id === cardId);
+
     if (cardIndex !== -1) {
-        // Determine which category array to update
-        let categoryKey = '';
-        if (cardsData.flows.some(c => c.id === cardId)) categoryKey = 'flows';
-        else if (cardsData.performance.some(c => c.id === cardId)) categoryKey = 'performance';
-        else if (cardsData.content.some(c => c.id === cardId)) categoryKey = 'content';
-        else if (cardsData.accessibility.some(c => c.id === cardId)) categoryKey = 'accessibility';
-        
-        if (categoryKey) {
-            const indexInCategory = cardsData[categoryKey].findIndex(c => c.id === cardId);
-            cardsData[categoryKey][indexInCategory] = updatedCard;
-        }
+        cardsData.cards[cardIndex] = updatedCard;
     }
     
     // Show success message

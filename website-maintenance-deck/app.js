@@ -99,14 +99,9 @@ function showEncouragementMessage() {
 }
 
 function getAllCards() {
-    if (!cardsData) return [];
-    
-    return [
-        ...cardsData.flows,
-        ...cardsData.performance,
-        ...cardsData.content,
-        ...cardsData.accessibility
-    ];
+    if (!cardsData || !cardsData.cards) return [];
+
+    return cardsData.cards;
 }
 
 function filterByCategory(category) {
@@ -122,7 +117,15 @@ function renderCards(category) {
     if (category === 'all') {
         cards = getAllCards();
     } else {
-        cards = cardsData[category] || [];
+        // Filter cards by category field
+        const categoryMap = {
+            'flows': 'Workflows',
+            'performance': 'Performance',
+            'content': 'Content',
+            'accessibility': 'Usability/Accessibility'
+        };
+        const categoryName = categoryMap[category];
+        cards = cardsData.cards.filter(card => card.category === categoryName);
     }
 
     cardsContainer.innerHTML = '';

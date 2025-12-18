@@ -1,5 +1,5 @@
 {
-  "flows": [
+  "cards": [
     {
       "id": 1,
       "title": "Test Your Contact Forms",
@@ -35,9 +35,7 @@
       "why": "These pages set expectations and build trust. Make sure they're working and saying the right things.",
       "how": "1. Complete a form/purchase to trigger the page\n2. Check the messaging - is it clear?\n3. Verify any next steps are explained\n4. Make sure links work",
       "stuck": "Want to optimize your confirmation pages? Let's chat in a DIY session."
-    }
-  ],
-  "performance": [
+    },
     {
       "id": 5,
       "title": "Check Your Site on Mobile",
@@ -64,9 +62,7 @@
       "why": "Your site might look perfect in Chrome but broken in Safari. Check both.",
       "how": "1. Open your site in Chrome\n2. Open it in Safari or Firefox\n3. Check if layouts look the same\n4. Test key functionality in both",
       "stuck": "Browser issues driving you crazy? Book a session."
-    }
-  ],
-  "content": [
+    },
     {
       "id": 8,
       "title": "Update Your Copyright Year",
@@ -147,9 +143,7 @@
       "why": "Typos make you look unprofessional. Fresh eyes catch what you miss.",
       "how": "1. Read your homepage, About, and Services pages\n2. Look for typos, weird spacing, formatting issues\n3. Check for outdated info (old address, phone, dates)\n4. Fix what you find",
       "stuck": "Want a second pair of eyes? Book a DIY session for a quick review."
-    }
-  ],
-  "accessibility": [
+    },
     {
       "id": 17,
       "title": "Check Image Alt Text",
@@ -221,6 +215,15 @@
       "why": "Clear labels and error messages help everyone fill out forms successfully.",
       "how": "1. Find a form on your site\n2. Check that every field has a clear label\n3. Try submitting with errors to see error messages\n4. Make sure error messages are helpful, not confusing",
       "stuck": "Forms confusing? Let's make them clearer together."
+    },
+    {
+      "id": 25,
+      "title": "Check for Software Updates",
+      "category": "Performance",
+      "time": "15 min",
+      "why": "Outdated software leaves your site vulnerable to hackers and can cause crashes. Regular updates patch security holes, fix bugs, and keep everything running smoothly.",
+      "how": "1. Back up your entire site first (so you can restore if something breaks)\n2. Check for available updates in your platform (WordPress dashboard, Squarespace, etc.)\n3. Update in this order: platform core first, then themes, then plugins\n4. After updating, test your site to make sure everything still works\n5. Check forms, checkout, and key pages",
+      "stuck": "Worried about breaking your site with updates? We can help you update safely in a DIY session."
     }
   ],
   "encouragement": [
