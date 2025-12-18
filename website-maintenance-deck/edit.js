@@ -1,5 +1,5 @@
 // Password for accessing the editor (CHANGE THIS!)
-const EDITOR_PASSWORD = 'glowup2025';
+const EDITOR_PASSWORD = 'maintenance2025';
 
 // State
 let cardsData = null;
@@ -255,7 +255,7 @@ function updatePreview() {
     const categoryBg = categoryColors[category] || '#b99cc1';
 
     previewCard.innerHTML = `
-        <div class="modal-header-text">Website Glow-Up Task</div>
+        <div class="modal-header-text">Website Maintenance Task</div>
         <div class="modal-divider"></div>
         <span class="card-category" style="background: ${categoryBg};">${category}</span>
         <h2 class="modal-title">${title}</h2>
@@ -263,13 +263,13 @@ function updatePreview() {
 
         <div class="modal-content-box">
             <div class="modal-section">
-                <h4>Why It's Important</h4>
-                <p>${why}</p>
+                <h4>Quick Steps:</h4>
+                ${stepsHTML}
             </div>
             <div class="modal-section-divider"></div>
             <div class="modal-section">
-                <h4>Quick Steps:</h4>
-                ${stepsHTML}
+                <h4>Why It's Important</h4>
+                <p>${why}</p>
             </div>
         </div>
 
