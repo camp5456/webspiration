@@ -255,14 +255,21 @@ function updatePreview() {
 
         <div class="modal-content-box">
             <div class="modal-section">
-                <h4>Quick Steps:</h4>
-                ${stepsHTML}
-            </div>
-            <div class="modal-section-divider"></div>
-            <div class="modal-section">
                 <h4>Why It's Important</h4>
                 <p>${why}</p>
             </div>
+            <div class="modal-section-divider"></div>
+            <div class="modal-section">
+                <h4>Quick Steps:</h4>
+                ${stepsHTML}
+            </div>
+            ${stuck && stuck !== 'Stuck message...' ? `
+            <div class="modal-section-divider"></div>
+            <div class="modal-section">
+                <h4>Stuck?</h4>
+                <p>${stuck}</p>
+            </div>
+            ` : ''}
         </div>
 
         <div class="modal-encouragement">

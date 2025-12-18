@@ -254,6 +254,13 @@ function openCardModal(card) {
                 <h4>Quick Steps:</h4>
                 ${formatHowTo(card.how)}
             </div>
+            ${card.stuck ? `
+            <div class="modal-section-divider"></div>
+            <div class="modal-section">
+                <h4>Stuck?</h4>
+                <p>${card.stuck}</p>
+            </div>
+            ` : ''}
         </div>
 
         <div class="modal-encouragement">
