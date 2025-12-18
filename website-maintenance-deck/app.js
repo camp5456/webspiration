@@ -31,6 +31,9 @@ async function init() {
     // Show random encouragement message
     showEncouragementMessage();
 
+    // Update category counts dynamically
+    updateCategoryCounts();
+
     // Show all cards by default
     renderCards('all');
     updateProgress();
@@ -102,6 +105,37 @@ function getAllCards() {
     if (!cardsData || !cardsData.cards) return [];
 
     return cardsData.cards;
+}
+
+function updateCategoryCounts() {
+    if (!cardsData || !cardsData.cards) return;
+
+    const allCards = cardsData.cards;
+    const categoryMap = {
+        'all': allCards.length,
+        'flows': allCards.filter(c => c.category === 'Workflows').length,
+        'performance': allCards.filter(c => c.category === 'Performance').length,
+        'content': allCards.filter(c => c.category === 'Content').length,
+        'accessibility': allCards.filter(c => c.category === 'Usability/Accessibility').length
+    };
+
+    // Update button counts
+    categoryButtons.forEach(btn => {
+        const category = btn.dataset.category;
+        const countSpan = btn.querySelector('.category-count');
+        if (countSpan && categoryMap[category]) {
+            countSpan.textContent = `(${categoryMap[category]})`;
+        }
+    });
+
+    // Update progress tracker total
+    const progressText = document.querySelector('.progress-text');
+    if (progressText) {
+        const completedSpan = document.getElementById('completed-count');
+        if (completedSpan) {
+            progressText.innerHTML = `<span id="completed-count">${completedSpan.textContent}</span> / ${allCards.length} tasks completed`;
+        }
+    }
 }
 
 function filterByCategory(category) {
