@@ -77,14 +77,14 @@ function setupEventListeners() {
 
 
 function loadCompletedCards() {
-    const saved = localStorage.getItem('glowUpDeckCompleted');
+    const saved = localStorage.getItem('websiteMaintenanceDeckCompleted');
     if (saved) {
         completedCards = new Set(JSON.parse(saved));
     }
 }
 
 function saveCompletedCards() {
-    localStorage.setItem('glowUpDeckCompleted', JSON.stringify([...completedCards]));
+    localStorage.setItem('websiteMaintenanceDeckCompleted', JSON.stringify([...completedCards]));
 }
 
 function showEncouragementMessage() {
@@ -201,7 +201,7 @@ function openCardModal(card) {
     const randomEncouragement = encouragementMessages[Math.floor(Math.random() * encouragementMessages.length)] || 'Your website deserves a little love today.';
 
     modalContent.innerHTML = `
-        <div class="modal-header-text">Website Glow-Up Task</div>
+        <div class="modal-header-text">Website Maintenance Task</div>
         <div class="modal-divider"></div>
         <span class="card-category">${card.category}</span>
         <h2 class="modal-title">${card.title}</h2>
@@ -303,7 +303,7 @@ function handleResetProgress() {
         completedCards.clear();
 
         // Clear localStorage
-        localStorage.removeItem('glowUpDeckCompleted');
+        localStorage.removeItem('websiteMaintenanceDeckCompleted');
 
         // Update UI
         updateProgress();

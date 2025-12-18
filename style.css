@@ -269,20 +269,20 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-/* GLOW UP DECK PROMO SECTION */
-.glow-up-promo-section {
+/* MAINTENANCE PROMO SECTION */
+.maintenance-deck-promo-section {
   background: #fff7fc;
   padding: 6rem 2rem;
   width: 100%;
 }
 
-.glow-up-promo-container {
+.maintenance-deck-promo-container {
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
 }
 
-.glow-up-badge {
+.maintenance-deck-badge {
   display: inline-block;
   background: #F26698;
   color: #ffffff;
@@ -296,20 +296,20 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-.glow-up-promo-section h2 {
+.maintenance-deck-promo-section h2 {
   text-align: center;
   margin-bottom: 1rem;
   color: #6B6967;
 }
 
-.glow-up-subtitle {
+.maintenance-deck-subtitle {
   font-size: 1.15rem;
   line-height: 1.6;
   color: #6B6967;
   margin-bottom: 2.5rem;
 }
 
-.glow-up-features {
+.maintenance-deck-features {
   display: flex;
   justify-content: center;
   gap: 2rem;

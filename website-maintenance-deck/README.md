@@ -1,4 +1,4 @@
-# The Website Glow Up Deck
+# The Website Maintenance Deck
 
 A web app for tracking 24 website maintenance tasks to keep your site fresh and working hard for your business.
 
@@ -28,9 +28,7 @@ A web app for tracking 24 website maintenance tasks to keep your site fresh and 
 
 ### 2. Deploy to Your Website
 
-1. Copy the entire `/glow-up-deck` folder to your website repository
-2. Commit and push to GitHub
-3. The app will be live at: `webspirationconsulting.com/glow-up-deck`
+The folder is already part of your website. After making changes, push to GitHub to update the live site at: `webspirationconsulting.com/website-maintenance-deck`
 
 ### 3. Test Everything
 
@@ -43,7 +41,7 @@ A web app for tracking 24 website maintenance tasks to keep your site fresh and 
 ## File Structure
 
 ```
-/glow-up-deck/
+/website-maintenance-deck/
   ├── index.html       # Main HTML structure
   ├── style.css        # All styling
   ├── app.js          # All functionality
@@ -57,15 +55,15 @@ A web app for tracking 24 website maintenance tasks to keep your site fresh and 
 
 ### Using the Card Editor
 
-1. Go to `webspirationconsulting.com/glow-up-deck/edit.html`
+1. Go to `webspirationconsulting.com/website-maintenance-deck/edit.html`
 2. Login with password: `glowup2025` (CHANGE THIS in edit.js line 2!)
 3. Click any card to edit it
 4. Update the content in the form
 5. See live preview as you type
 6. Click "Save Changes"
 7. When done, click "Download Updated JSON"
-8. Replace `cards.json` in your repo with the downloaded file
-9. Push to GitHub
+8. Replace `cards.json` with the downloaded file
+9. Push changes to update live site
 
 ### Changing the Editor Password
 
@@ -96,7 +94,7 @@ const EDITOR_PASSWORD = 'your-new-password-here';
 - **No backend required**: Everything runs client-side
 - **Data storage**: Uses browser localStorage
 - **Email collection**: Via Formspree (free tier: 50 submissions/month)
-- **Hosting**: Static files on GitHub Pages
+- **Hosting**: Static files hosted with your website
 
 ## Customization
 

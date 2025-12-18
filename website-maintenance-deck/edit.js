@@ -15,6 +15,9 @@ const cardsList = document.getElementById('cards-list');
 const editModal = document.getElementById('edit-modal');
 const editForm = document.getElementById('edit-form');
 const successMessage = document.getElementById('success-message');
+const encouragementModal = document.getElementById('encouragement-modal');
+const encouragementForm = document.getElementById('encouragement-form');
+const encouragementList = document.getElementById('encouragement-list');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', init);
@@ -28,10 +31,13 @@ async function init() {
     
     // Setup form listener
     editForm.addEventListener('submit', handleSaveCard);
-    
+
+    // Setup encouragement form listener
+    encouragementForm.addEventListener('submit', handleSaveEncouragement);
+
     // Live preview
     setupLivePreview();
-    
+
     // Allow Enter key on password field
     passwordInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -45,6 +51,7 @@ async function loadCardsData() {
         const response = await fetch('cards.json');
         cardsData = await response.json();
         renderCardsList();
+        renderEncouragementList();
     } catch (error) {
         console.error('Error loading cards:', error);
         alert('Error loading cards data. Make sure cards.json is in the same folder.');
@@ -299,5 +306,93 @@ function downloadJSON() {
 window.onclick = function(event) {
     if (event.target === editModal) {
         closeModal();
+    }
+    if (event.target === encouragementModal) {
+        closeEncouragementModal();
+    }
+}
+
+// Encouragement Message Functions
+function renderEncouragementList() {
+    if (!cardsData || !cardsData.encouragement) return;
+
+    encouragementList.innerHTML = '';
+
+    cardsData.encouragement.forEach((message, index) => {
+        const messageItem = document.createElement('div');
+        messageItem.className = 'card-item';
+        messageItem.onclick = () => openEncouragementModal(index);
+
+        messageItem.innerHTML = `
+            <h3 style="font-size: 1rem; font-style: italic; color: #6B6967;">"${message}"</h3>
+            <div class="card-meta">
+                <span>✨ Message ${index + 1}</span>
+            </div>
+        `;
+
+        encouragementList.appendChild(messageItem);
+    });
+}
+
+function openEncouragementModal(index) {
+    document.getElementById('encouragement-index').value = index;
+    document.getElementById('encouragement-text').value = cardsData.encouragement[index];
+
+    encouragementModal.style.display = 'block';
+
+    // Show delete button for existing messages
+    const deleteBtn = encouragementForm.querySelector('button[onclick="deleteEncouragementMessage()"]');
+    if (deleteBtn) {
+        deleteBtn.style.display = 'inline-block';
+    }
+}
+
+function closeEncouragementModal() {
+    encouragementModal.style.display = 'none';
+    encouragementForm.reset();
+}
+
+function handleSaveEncouragement(e) {
+    e.preventDefault();
+
+    const index = parseInt(document.getElementById('encouragement-index').value);
+    const text = document.getElementById('encouragement-text').value.trim();
+
+    if (index === -1) {
+        // Adding new message
+        cardsData.encouragement.push(text);
+    } else {
+        // Updating existing message
+        cardsData.encouragement[index] = text;
+    }
+
+    showSuccessMessage();
+    renderEncouragementList();
+    closeEncouragementModal();
+}
+
+function addEncouragementMessage() {
+    document.getElementById('encouragement-index').value = -1;
+    document.getElementById('encouragement-text').value = '';
+
+    encouragementModal.style.display = 'block';
+
+    // Hide delete button for new messages
+    const deleteBtn = encouragementForm.querySelector('button[onclick="deleteEncouragementMessage()"]');
+    if (deleteBtn) {
+        deleteBtn.style.display = 'none';
+    }
+}
+
+function deleteEncouragementMessage() {
+    const index = parseInt(document.getElementById('encouragement-index').value);
+
+    if (index === -1) return;
+
+    if (confirm('Are you sure you want to delete this inspiration message?')) {
+        cardsData.encouragement.splice(index, 1);
+        showSuccessMessage();
+        renderEncouragementList();
+        closeEncouragementModal();
     }
 }

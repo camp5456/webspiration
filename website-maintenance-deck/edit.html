@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Editor | Website Glow Up Deck</title>
+    <title>Card Editor | Website Maintenance Deck</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -547,7 +547,7 @@
 
     <!-- Login Screen -->
     <div id="login-screen" class="container">
-        <h1>🔒 Card Editor Login</h1>
+        <h1>🔒 Deck Editor Login</h1>
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" id="password" placeholder="Enter password">
@@ -559,7 +559,7 @@
     <!-- Editor Screen -->
     <div id="editor-screen" class="container">
         <div class="editor-header">
-            <h1>Website Glow Up Deck - Card Editor</h1>
+            <h1>Website Maintenance Deck - Card Editor</h1>
             <div class="header-actions">
                 <button onclick="downloadJSON()" class="btn-success">💾 Download Updated JSON</button>
                 <button onclick="logout()" class="btn-secondary">Logout</button>
@@ -580,9 +580,40 @@
 
         <div id="cards-list" class="cards-list"></div>
 
+        <!-- Encouragement Messages Section -->
+        <div style="margin-top: 60px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+            <h2 style="font-family: 'Fraunces', serif; color: #6B6967; margin-bottom: 20px; font-weight: 300;">✨ Inspiration Messages</h2>
+            <p style="margin-bottom: 30px; color: #666;">These encouraging messages appear randomly on the cards to motivate users.</p>
+            <div id="encouragement-list" class="cards-list"></div>
+            <button onclick="addEncouragementMessage()" style="margin-top: 20px; background: #99e0c9; padding: 12px 30px;">+ Add New Message</button>
+        </div>
+
         <div class="download-section">
             <h3>📥 How to Update Your Site</h3>
             <p>After editing cards, click "Download Updated JSON" above, then replace the cards.json file in your repo and push to GitHub.</p>
+        </div>
+    </div>
+
+    <!-- Encouragement Edit Modal -->
+    <div id="encouragement-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEncouragementModal()">&times;</span>
+            <h2>Edit Inspiration Message</h2>
+
+            <form id="encouragement-form">
+                <input type="hidden" id="encouragement-index">
+
+                <div class="form-group">
+                    <label for="encouragement-text">Message:</label>
+                    <textarea id="encouragement-text" rows="3" required placeholder="Enter an encouraging message..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-success">Save Message</button>
+                    <button type="button" onclick="deleteEncouragementMessage()" class="btn-secondary" style="background: #e74c3c;">Delete Message</button>
+                    <button type="button" onclick="closeEncouragementModal()" class="btn-secondary">Cancel</button>
+                </div>
+            </form>
         </div>
     </div>
 
