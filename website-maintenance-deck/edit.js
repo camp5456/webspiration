@@ -263,13 +263,13 @@ function updatePreview() {
 
         <div class="modal-content-box">
             <div class="modal-section">
-                <h4>Quick Steps:</h4>
-                ${stepsHTML}
+                <h4>Why It's Important</h4>
+                <p>${why}</p>
             </div>
             <div class="modal-section-divider"></div>
             <div class="modal-section">
-                <h4>Why It's Important</h4>
-                <p>${why}</p>
+                <h4>Quick Steps:</h4>
+                ${stepsHTML}
             </div>
         </div>
 

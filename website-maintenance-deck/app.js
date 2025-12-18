@@ -209,13 +209,13 @@ function openCardModal(card) {
 
         <div class="modal-content-box">
             <div class="modal-section">
-                <h4>Quick Steps:</h4>
-                ${formatHowTo(card.how)}
+                <h4>Why It's Important</h4>
+                <p>${card.why}</p>
             </div>
             <div class="modal-section-divider"></div>
             <div class="modal-section">
-                <h4>Why It's Important</h4>
-                <p>${card.why}</p>
+                <h4>Quick Steps:</h4>
+                ${formatHowTo(card.how)}
             </div>
         </div>
 
