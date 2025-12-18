@@ -270,7 +270,7 @@ function toggleCardComplete(cardId) {
 }
 
 function updateProgress() {
-    const total = 24;
+    const total = getAllCards().length;
     const completed = completedCards.size;
     const percentage = (completed / total) * 100;
     
