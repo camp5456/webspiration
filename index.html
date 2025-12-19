@@ -25,15 +25,14 @@
         .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(89,105,166,0.35)}
         .btn:active{transform:translateY(0);box-shadow:0 6px 16px rgba(89,105,166,0.2)}
         .container{max-width:1200px;margin:0 auto;padding:0 2rem}
-        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-        .hero{animation:fadeIn 0.7s ease-out}
-        .about-grid{animation:fadeIn 0.7s ease-out 0.15s backwards}
     </style>
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.css">
     <!-- Matomo -->
     <script>
       var _paq = window._paq = window._paq || [];
@@ -59,7 +58,7 @@
     <p><a href="index.html">webspiration consulting</a></p>
   </header>
 
-  <section class="hero">
+  <section class="hero" data-aos="fade-in" data-aos-duration="900">
     <div class="container">
       <h1>Frustrated with your site?</h1>
       <h2 class="subtitle">Hire a website bestie.</h2>
@@ -74,7 +73,7 @@
 
   <!-- ABOUT -->
     <section id="about" class="about-section">
-        <div class="about-grid">
+        <div class="about-grid" data-aos="fade-up" data-aos-delay="150">
 
             <!-- LEFT COLUMN -->
             <div class="about-image">
@@ -116,7 +115,7 @@
 
         <div class="video-wrapper">
             <!-- Replace src with your actual YouTube embed -->
-            <iframe src="https://www.youtube.com/embed/q3zNF0HLqh8" title="Website Glow-Up Plan explanation" allowfullscreen></iframe>
+            <lite-youtube videoid="q3zNF0HLqh8" playlabel="Play: Website Glow-Up Plan explanation"></lite-youtube>
         </div>
 
         <p>
@@ -132,7 +131,7 @@
       <h2><span class="pink">02</span> | Secret Shopper Experience</h2>
 
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/K24gB_kraq8" title="Secret Shopper Experience explanation" allowfullscreen></iframe>
+        <lite-youtube videoid="K24gB_kraq8" playlabel="Play: Secret Shopper Experience explanation"></lite-youtube>
       </div>
 
       <p>
@@ -149,7 +148,7 @@
       <h2><span class="pink">03</span> | DIY Website Support</h2>
 
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/20Q7yZo1zio" title="DIY Website Support explanation" allowfullscreen></iframe>
+        <lite-youtube videoid="20Q7yZo1zio" playlabel="Play: DIY Website Support explanation"></lite-youtube>
       </div>
 
       <p>The DIY Support Session is a 30-minute working session where we jump on Zoom to get you unstuck. Whether you're troubleshooting a tricky layout, trying to choose the right plugin, or just need clarity on next steps, I'll help you work through it in real time. Bring your questions (technical, strategic, or creative) and I'll walk you through the answers step by step. Think of it as hiring a seasoned web pro to sit beside you while you work, except we're on Zoom. You'll leave with clarity, confidence, and a concrete plan.      </p>
@@ -164,7 +163,7 @@
       <h2><span class="pink">04</span> | Custom Solutions</h2>
 
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/eJvWj1LLQpw" title="Custom Solutions explanation" allowfullscreen></iframe>
+        <lite-youtube videoid="eJvWj1LLQpw" playlabel="Play: Custom Solutions explanation"></lite-youtube>
       </div>
 
       <p>
@@ -222,8 +221,19 @@
     </div>
   </footer>
   
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS animations
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 700,
+                easing: 'ease-out',
+                once: false
+            });
+        }
+
         // Shrink header on scroll (desktop only)
         const header = document.querySelector('.minimal-header');
         let lastScroll = 0;
