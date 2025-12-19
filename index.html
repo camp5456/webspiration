@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Matomo -->
     <script>
       var _paq = window._paq = window._paq || [];
@@ -55,7 +55,7 @@
 
             <!-- LEFT COLUMN -->
             <div class="about-image">
-            <img src="bio.webp" alt="Twila bio image" />
+            <img src="bio.webp" alt="Twila bio image" loading="lazy" width="600" height="600" />
             </div>
 
             <!-- RIGHT COLUMN -->
@@ -199,28 +199,33 @@
     </div>
   </footer>
   
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
     <script>
-    AOS.init({
-        duration: 700,
-        easing: 'ease-out',
-        once: false
-    });
-
-    // Shrink header on scroll (desktop only)
-    const header = document.querySelector('.minimal-header');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS when script loads
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 700,
+                easing: 'ease-out',
+                once: false
+            });
         }
 
-        lastScroll = currentScroll;
+        // Shrink header on scroll (desktop only)
+        const header = document.querySelector('.minimal-header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
     });
     </script>
 </body>
