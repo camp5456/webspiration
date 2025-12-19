@@ -25,13 +25,15 @@
         .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(89,105,166,0.35)}
         .btn:active{transform:translateY(0);box-shadow:0 6px 16px rgba(89,105,166,0.2)}
         .container{max-width:1200px;margin:0 auto;padding:0 2rem}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        .hero{animation:fadeIn 0.7s ease-out}
+        .about-grid{animation:fadeIn 0.7s ease-out 0.15s backwards}
     </style>
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Matomo -->
     <script>
       var _paq = window._paq = window._paq || [];
@@ -57,7 +59,7 @@
     <p><a href="index.html">webspiration consulting</a></p>
   </header>
 
-  <section class="hero" data-aos="fade-in" data-aos-duration="900">
+  <section class="hero">
     <div class="container">
       <h1>Frustrated with your site?</h1>
       <h2 class="subtitle">Hire a website bestie.</h2>
@@ -72,11 +74,11 @@
 
   <!-- ABOUT -->
     <section id="about" class="about-section">
-        <div class="about-grid" data-aos="fade-up" data-aos-delay="150">
+        <div class="about-grid">
 
             <!-- LEFT COLUMN -->
             <div class="about-image">
-            <img src="bio.webp" alt="Twila bio image" loading="lazy" width="600" height="600" />
+            <img src="bio.webp" alt="Twila bio image" fetchpriority="high" width="721" height="961" />
             </div>
 
             <!-- RIGHT COLUMN -->
@@ -220,18 +222,8 @@
     </div>
   </footer>
   
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize AOS when script loads
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                duration: 700,
-                easing: 'ease-out',
-                once: false
-            });
-        }
-
         // Shrink header on scroll (desktop only)
         const header = document.querySelector('.minimal-header');
         let lastScroll = 0;
