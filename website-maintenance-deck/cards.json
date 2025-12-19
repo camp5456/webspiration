@@ -6,7 +6,7 @@
       "category": "Workflows",
       "time": "10 min",
       "why": "A broken contact form means lost leads. You might not even know people are trying to reach you.",
-      "how": "1. Fill out each form on your site\n2. Check if you receive the emails\n3. Test from both desktop and mobile\n4. Verify auto-reply emails are working",
+      "how": "1. Fill out each form on your site\n2. Check if you receive the emails\n3. Does it look the way you want?\n4. Does the person filling out the form get a copy?\n5. What displays on the screen after they submit?",
       "stuck": "Need help troubleshooting your forms? Book a DIY Support Session."
     },
     {
@@ -14,8 +14,8 @@
       "title": "Test Your Checkout Flow",
       "category": "Workflows",
       "time": "15 min",
-      "why": "If checkout breaks, you lose sales. Test the entire journey your customers take.",
-      "how": "1. Add an item to cart (or start booking)\n2. Go through each step as a customer would\n3. Complete a test purchase/booking\n4. Verify confirmation emails arrive",
+      "why": "It is important that your checkout process works but it also needs to be effortless and add value to your customer's experience. ",
+      "how": "1. Is the buy button easy to fine? \n2. Add an item to cart (or start booking).\n3. Go through each step as a customer would.\n4. Complete a test purchase/booking\n5. Verify confirmation emails arrive",
       "stuck": "Stuck on a broken checkout? Let's fix it together in a DIY session."
     },
     {
@@ -23,16 +23,16 @@
       "title": "Test Your Email Opt-in Flow",
       "category": "Workflows",
       "time": "10 min",
-      "why": "Your email list is valuable. Make sure people can actually join it.",
-      "how": "1. Sign up using a test email\n2. Check that welcome email arrives\n3. Verify email confirms subscription\n4. Test unsubscribe link works too",
-      "stuck": "Email flows confusing? Book a session and we'll walk through it."
+      "why": "Your email list is one of your most valuable business assets. Make sure people can actually join it and get all the freebies you've promised them.",
+      "how": "1. Sign up using a test email\n2. Check that welcome email arrives\n3. Verify that the email confirmation works\n4. Test that the unsubscribe link works too\n5. Did the opt-in offer work",
+      "stuck": "Is your opt-in email workflow confusing? Book a session and we'll walk through it together."
     },
     {
       "id": 4,
       "title": "Test Your Login Workflows",
       "category": "Workflows",
       "time": "10 min",
-      "why": "These pages set expectations and build trust. Make sure they're working and saying the right things.",
+      "why": "Do your customers need to login to access your products or services? Are you hosting your services on different platforms? It is important that a user can get from A to B without frustration. Testing login workflows are so important for creating a good customer experience.",
       "how": "1. Complete a form/purchase to trigger the page\n2. Check the messaging - is it clear?\n3. Verify any next steps are explained\n4. Make sure links work",
       "stuck": "Want to optimize your confirmation pages? Let's chat in a DIY session."
     },
