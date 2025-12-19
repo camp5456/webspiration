@@ -6,7 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional website audits, secret shopper experiences, and DIY support for small businesses. Get expert help to improve your site's performance and user experience.">
     <title>Webspiration</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Critical CSS - above the fold */
+        html{margin:0;padding:0}
+        body{margin:0;color:#6B6967}
+        .minimal-header{width:100%;text-align:center;padding:1rem 0;background:#fff;border-bottom:solid 1px #efefef;box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:padding 0.3s ease}
+        @media (min-width:769px){.minimal-header{position:sticky;top:0;z-index:1000}.minimal-header.scrolled{padding:0.5rem 0}}
+        .minimal-header p{margin:0;font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:#999}
+        .minimal-header a{color:#999;text-decoration:none;transition:font-weight 0.2s ease}
+        .minimal-header a:hover{font-weight:600}
+        .hero{text-align:center}
+        p{font-family:"Inter",sans-serif;font-size:1.05rem;line-height:1.8;font-weight:300;color:#6B6967;margin-bottom:0!important}
+        @media (min-width:768px){.hero{min-height:89vh;display:flex;align-items:center;justify-content:center;padding:0 0 4rem 0}}
+        .hero h1,.hero h2{font-family:"Fraunces",serif;font-size:3.6rem;font-weight:300;margin:0;line-height:1.25;color:#6B6967;margin-top:4rem}
+        .hero h2{color:#F26698;font-style:italic;margin-top:0}
+        .hero h3{font-family:"Inter",sans-serif;font-size:1.15rem;color:#6B6967;font-weight:300;margin:4rem 0;line-height:1.25;text-transform:capitalize}
+        .btn{display:inline-flex;justify-content:center;align-items:center;gap:0.75rem;padding:1rem 2rem;background:#5969a6;color:#fff;border-radius:6px;text-decoration:none;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;font-size:0.85rem;box-shadow:0 8px 20px rgba(89,105,166,0.25);transition:transform 0.15s ease,box-shadow 0.15s ease;margin-top:2.75rem;margin-left:auto;margin-right:auto;align-self:center}
+        .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(89,105,166,0.35)}
+        .btn:active{transform:translateY(0);box-shadow:0 6px 16px rgba(89,105,166,0.2)}
+        .container{max-width:1200px;margin:0 auto;padding:0 2rem}
+    </style>
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
