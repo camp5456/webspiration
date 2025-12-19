@@ -41,11 +41,11 @@ body {
   font-weight: 400;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #999999;
+  color: #767676;
 }
 
 .minimal-header a {
-  color: #999999;
+  color: #767676;
   text-decoration: none;
   transition: font-weight 0.2s ease;
 }
@@ -97,7 +97,7 @@ p {
 }
 
 .pink {
-  color: #F26698;
+  color: #D8467D;
 }
 
 .hero h3 {
@@ -202,7 +202,7 @@ h2 {
 
 /* ACCENT WORD (PINK) */
 .about-content h2 .accent {
-  color: #f26698;
+  color: #F26698;
   font-style: italic;
 }
 
@@ -284,7 +284,7 @@ h2 {
 
 .maintenance-deck-badge {
   display: inline-block;
-  background: #F26698;
+  background: #D8467D;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
@@ -327,24 +327,24 @@ h2 {
 }
 
 .feature-icon {
-  color: #F26698;
+  color: #D8467D;
   font-weight: 700;
   font-size: 1.1rem;
 }
 
 .btn-glow-up {
-  background: #F26698;
-  box-shadow: 0 8px 20px rgba(242, 102, 152, 0.25);
+  background: #D8467D;
+  box-shadow: 0 8px 20px rgba(216, 70, 125, 0.25);
 }
 
 .btn-glow-up:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(242, 102, 152, 0.35);
+  box-shadow: 0 12px 28px rgba(216, 70, 125, 0.35);
 }
 
 .btn-glow-up:active {
   transform: translateY(0);
-  box-shadow: 0 6px 16px rgba(242, 102, 152, 0.2);
+  box-shadow: 0 6px 16px rgba(216, 70, 125, 0.2);
 }
 
 /* Responsive for mobile */
@@ -449,5 +449,5 @@ h2 {
 }
 
 .footer .socials a:hover {
-  color: #F26698;
+  color: #D8467D;
 }
