@@ -56,11 +56,11 @@ body {
     font-weight: 400;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: #999999;
+    color: #767676;
 }
 
 .minimal-header a {
-    color: #999999;
+    color: #767676;
     text-decoration: none;
     transition: font-weight 0.2s ease;
 }
@@ -112,7 +112,7 @@ h1 {
 
 .pretitle {
     font-size: 1.3rem;
-    color: #F26698;
+    color: #D8467D;
     text-transform:uppercase;
 }
 
@@ -128,14 +128,14 @@ h1 {
 }
 
 .hero h2 {
-  color: #F26698;
+  color: #D8467D;
   font-style: italic;
   margin-top: 0rem;
 
 }
 
 .pink {
-  color: #F26698;
+  color: #D8467D;
 }
 
 .hero h3 {
@@ -473,7 +473,7 @@ h1 {
 }
 
 .card-time {
-    color: #999;
+    color: #767676;
     font-size: 0.9rem;
     padding: .5rem 0rem;
 }
