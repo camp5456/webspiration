@@ -245,6 +245,24 @@ h1 {
 .card.completed {
     opacity: 0.5;
     background: #f5f5f5;
+    position: relative;
+}
+
+.card.completed::after {
+    content: 'COMPLETED';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #999;
+    opacity: 0.4;
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
 }
 
 /* Random Card Styling */
