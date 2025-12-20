@@ -1,4 +1,8 @@
 / * Base */
+* {
+  box-sizing: border-box;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -279,6 +283,7 @@ h2 {
 .maintenance-deck-promo-container {
   max-width: 700px;
   margin: 0 auto;
+  padding: 0 1.5rem;
   text-align: center;
 }
 
@@ -357,6 +362,14 @@ h2 {
 
   .glow-up-promo-section {
     padding: 4rem 1.5rem;
+  }
+
+  .maintenance-deck-promo-section {
+    padding: 4rem 0;
+  }
+
+  .maintenance-deck-promo-container {
+    padding: 0 1.5rem;
   }
 }
 
