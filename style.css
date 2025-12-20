@@ -213,6 +213,31 @@ h2 {
 
 /* RESPONSIVE (MOBILE STACK) */
 @media (max-width: 768px) {
+  .hero {
+    padding-bottom: 3rem;
+  }
+
+  .hero h3 {
+    font-size: 1.05rem;
+  }
+
+  .section .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section h2 {
+    width: calc(100% - 4rem);
+    margin-left: 1.5rem;
+    margin-right: 2.5rem;
+  }
+
+  .section p {
+    width: calc(100% - 4rem);
+    margin-left: 1.5rem;
+    margin-right: 2.5rem;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
   }
