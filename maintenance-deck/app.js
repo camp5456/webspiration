@@ -183,7 +183,7 @@ function createRandomCardElement() {
     cardDiv.innerHTML = `
         <div class="card-front">
             <div class="random-card-icon">🎲</div>
-            <h3>Surprise me with a random card</h3>
+            <h3>Surprise me with a random task</h3>
         </div>
     `;
 
