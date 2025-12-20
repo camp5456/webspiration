@@ -28,7 +28,7 @@ A web app for tracking 24 website maintenance tasks to keep your site fresh and 
 
 ### 2. Deploy to Your Website
 
-The folder is already part of your website. After making changes, push to GitHub to update the live site at: `webspirationconsulting.com/website-maintenance-deck`
+The folder is already part of your website. After making changes, push to GitHub to update the live site at: `webspirationconsulting.com/maintenance-deck`
 
 ### 3. Test Everything
 
@@ -41,7 +41,7 @@ The folder is already part of your website. After making changes, push to GitHub
 ## File Structure
 
 ```
-/website-maintenance-deck/
+/maintenance-deck/
   ├── index.html       # Main HTML structure
   ├── style.css        # All styling
   ├── app.js          # All functionality
@@ -55,7 +55,7 @@ The folder is already part of your website. After making changes, push to GitHub
 
 ### Using the Card Editor
 
-1. Go to `webspirationconsulting.com/website-maintenance-deck/edit.html`
+1. Go to `webspirationconsulting.com/maintenance-deck/edit.html`
 2. Login with password: `glowup2025` (CHANGE THIS in edit.js line 2!)
 3. Click any card to edit it
 4. Update the content in the form
