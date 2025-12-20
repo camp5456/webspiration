@@ -11,6 +11,7 @@ html {
 body {
   margin: 0;
   color: #6B6967;
+  overflow-x: hidden;
 }
 
 /* MINIMAL HEADER */
@@ -279,7 +280,6 @@ h2 {
 .maintenance-deck-promo-section {
   background: #fff7fc;
   padding: 6rem 2rem;
-  width: 100%;
 }
 
 .maintenance-deck-promo-container {
