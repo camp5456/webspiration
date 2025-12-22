@@ -330,7 +330,7 @@ h2 {
 
 /* Full-width video wrapper */
 .video-wrapper {
-  width: 92%;
+  width: 100%;
   align-self: flex-start; /* left-aligned on mobile */
 }
 
@@ -338,16 +338,19 @@ h2 {
 @media (min-width: 990px) {
   .video-wrapper {
     align-self: center;
-    max-width: 720px; 
+    max-width: 800px;
   }
 }
 
+/* Style lite-youtube and regular iframes */
+.video-wrapper lite-youtube,
 .video-wrapper iframe {
-  width: 91%;
-  height: 600px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   border: none;
   display: block;
-  margin: 1.5rem;
+  margin: 0;
 }
 
 /* Paragraph styling in sections */
