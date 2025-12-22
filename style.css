@@ -26,7 +26,7 @@ body {
 }
 
 /* Sticky only on desktop */
-@media (min-width: 769px) {
+@media (min-width: 990px) {
   .minimal-header {
     position: sticky;
     top: 0;
@@ -185,7 +185,7 @@ button.btn {
 /* RIGHT COLUMN — CONTENT */
 .about-content {
   background: #f5f5f5;    /* light grey background */
-  padding: 4rem 6.5rem 5rem 6.5rem;
+  padding: 4rem 7.5rem 5rem 1.5rem;
   max-width: 600px;
   margin: 0 auto;
   align-items: flex-start;
@@ -227,15 +227,21 @@ h2 {
   }
 
   .section h2 {
-    width: calc(100% - 4rem);
     margin-left: 1.5rem;
-    margin-right: 2.5rem;
+    margin-right: 3.5rem;
+    width: auto;
   }
 
   .section p {
-    width: calc(100% - 4rem);
     margin-left: 1.5rem;
-    margin-right: 2.5rem;
+    margin-right: 1.5rem;
+    width: auto;
+  }
+
+  .video-wrapper {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 100%;
   }
 
   .about-grid {
@@ -250,6 +256,32 @@ h2 {
 
   .about-image img {
     height: 300px; /* nice constrained height on mobile */
+  }
+}
+
+/* TABLET RANGE (769px - 989px) - Left aligned with margins */
+@media (min-width: 769px) and (max-width: 989px) {
+  .section .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section h2 {
+    margin-left: 1.5rem;
+    margin-right: 3.5rem;
+    width: auto;
+  }
+
+  .section p {
+    margin-left: 1.5rem;
+    margin-right: 3.5rem;
+    width: auto;
+  }
+
+  .video-wrapper {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 80%;
   }
 }
 
@@ -281,7 +313,15 @@ h2 {
   margin-top: 0.5rem;     /* minimal space at the top */
   margin-bottom: 2.5rem;
   text-align: left;
-  align-self: flex-start; /* keep headings left-aligned */
+  align-self: flex-start; /* keep headings left-aligned on mobile */
+}
+
+/* Center headings on medium and large screens */
+@media (min-width: 990px) {
+  .section h2 {
+    text-align: center;
+    align-self: center;
+  }
 }
 
 #services {
@@ -290,15 +330,39 @@ h2 {
 
 /* Full-width video wrapper */
 .video-wrapper {
-  width: 100%;
+  width: 92%;
+  align-self: flex-start; /* left-aligned on mobile */
+}
+
+/* Center video on medium and large screens */
+@media (min-width: 990px) {
+  .video-wrapper {
+    align-self: center;
+    max-width: 720px; 
+  }
 }
 
 .video-wrapper iframe {
-  width: 100%;
+  width: 91%;
   height: 600px;
   border: none;
   display: block;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem;
+}
+
+/* Paragraph styling in sections */
+.section p {
+  text-align: left; /* text is left-aligned */
+  align-self: flex-start; /* left-aligned on mobile */
+  width: 80%;
+}
+
+/* Center paragraphs on medium and large screens */
+@media (min-width: 990px) {
+  .section p {
+    align-self: center;
+    max-width: 720px; /* narrower width so it can be centered */
+  }
 }
 
 /* MAINTENANCE PROMO SECTION */
